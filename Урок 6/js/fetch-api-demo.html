@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>API Demo</title>
+</head>
+<body>
+<h1>Пример работы с API</h1>
+<button id="load">Загрузить данные</button>
+<pre id="output"></pre>
+
+<script>
+    document.getElementById("load").addEventListener("click", async () => {
+        const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+        const data = await res.json();
+        document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    });
+</script>
+</body>
+</html>
