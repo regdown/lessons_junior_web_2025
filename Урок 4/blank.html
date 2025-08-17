@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Урок JavaScript</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    pre { background: #f0f0f0; padding: 10px; border-radius: 5px; }
+    .section { margin-bottom: 40px; }
+  </style>
+</head>
+<body>
+<div class="section">
+  <h2>Пример 10: Ошибка в консоли</h2>
+  <script>
+      try {
+          console.log(usrname); // ошибка: переменная не определена
+      } catch (e) {
+          console.warn("Обнаружена ошибка: " + e.message);
+      }
+  </script>
+</div>
+</body>
+</html>

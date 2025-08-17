@@ -1,0 +1,12 @@
+p {
+  border: 10px dotted pink;
+  margin: 0;
+  width: 400px;
+  height: 200px;
+  background-color: black;
+  color: white;
+}
+
+p {
+  padding: 30px;
+}

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Обмен с backend (fetch API)</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        button { padding: 10px 15px; font-size: 16px; }
+        ul { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Загрузка задач с сервера</h1>
+    <button onclick="loadTodos()">Загрузить данные</button>
+    <ul id="todo-list"></ul>
+
+    <script>
+        async function loadTodos() {
+            const response = await fetch('https://test2025-23554.free.beeceptor.com/todos');
+            if (!response.ok) {
+                document.getElementById('todo-list').innerHTML = '<li>Ошибка загрузки: ' + response.status + '</li>';
+                return;
+            }
+
+            const todos = await response.json();
+            const list = document.getElementById('todo-list');
+            list.innerHTML = '';
+
+            todos.forEach(todo => {
+                const li = document.createElement('li');
+                li.textContent = `${todo.id}. ${todo.title} [${todo.completed ? '✔️ Выполнено' : '❌ Не выполнено'}]`;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

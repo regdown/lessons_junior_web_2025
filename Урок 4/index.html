@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Урок JavaScript</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    pre { background: #f0f0f0; padding: 10px; border-radius: 5px; }
+    .section { margin-bottom: 40px; }
+  </style>
+</head>
+<body>
+<h1>Примеры из урока по JavaScript и DOM</h1>
+
+<div class="section">
+  <h2>Пример 1: Вывод в консоль</h2>
+  <pre>&lt;script&gt;console.log("Привет, мир!");&lt;/script&gt;</pre>
+  <script>console.log("Привет, мир!");</script>
+</div>
+
+<div class="section">
+  <h2>Пример 2: Переменные и типы</h2>
+  <script>
+      let name = "Alice";
+      let age = 30;
+      console.log(name, age);
+  </script>
+  <pre>let name = "Alice";<br>let age = 30;<br>console.log(name, age);</pre>
+</div>
+
+<div class="section">
+  <h2>Пример 3: Операции и строки</h2>
+  <script>
+      let x = 5, y = 2;
+      let sum = x + y;
+      console.log("x+y=", sum);
+      let msg = "Hello, " + name;
+      console.log(msg);
+  </script>
+</div>
+
+<div class="section">
+  <h2>Пример 4: Условие if/else</h2>
+  <script>
+      if (age >= 18) {
+          console.log("Совершеннолетний");
+      } else {
+          console.log("Несовершеннолетний");
+      }
+  </script>
+</div>
+
+<div class="section">
+  <h2>Пример 5: Цикл for</h2>
+  <script>
+      for (let i = 1; i <= 5; i++) {
+          console.log(i);
+      }
+  </script>
+</div>
+
+<div class="section">
+  <h2>Пример 6: Функция greet</h2>
+  <script>
+      function greet(username) {
+          console.log("Привет, " + username);
+      }
+      greet("Мир");
+  </script>
+</div>
+
+<div class="section">
+  <h2>Пример 7: Работа с DOM</h2>
+  <p id="demo">Hello</p>
+  <button onclick="document.getElementById('demo').innerText='Привет!'">Изменить текст</button>
+</div>
+
+<div class="section">
+  <h2>Пример 8: Событие click</h2>
+  <button id="btn">Нажми меня</button>
+  <script>
+      document.getElementById("btn").addEventListener("click", function() {
+          alert("Кнопка нажата!");
+      });
+  </script>
+</div>
+
+<div class="section">
+  <h2>Пример 9: Обработка ввода</h2>
+  <input id="nameInput" placeholder="Введите имя">
+  <span id="greet"></span>
+  <script>
+      document.getElementById("nameInput").addEventListener("input", function() {
+          let name = this.value;
+          document.getElementById("greet").innerText = "Привет, " + name;
+      });
+  </script>
+</div>
+
+<div class="section">
+  <h2>Пример 10: Ошибка в консоли</h2>
+  <script>
+      try {
+          console.log(usrname); // ошибка: переменная не определена
+      } catch (e) {
+          console.warn("Обнаружена ошибка: " + e.message);
+      }
+  </script>
+</div>
+</body>
+</html>

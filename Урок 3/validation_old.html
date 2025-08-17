@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ru">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Форма до HTML5</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #eef2f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.75rem;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+
+  <script type="text/javascript">
+      function validateForm() {
+          var name = document.forms["oldForm"]["name"].value;
+          var email = document.forms["oldForm"]["email"].value;
+          var phone = document.forms["oldForm"]["phone"].value;
+          var message = document.forms["oldForm"]["message"].value;
+
+          if (name == "" || email == "" || phone == "" || message == "") {
+              alert("Пожалуйста, заполните все поля.");
+              return false;
+          }
+
+          var emailPattern = /^[^@]+@[^@]+\.[a-z]{2,}$/i;
+          if (!emailPattern.test(email)) {
+              alert("Введите корректный email.");
+              return false;
+          }
+
+          var phonePattern = /^[0-9]{10}$/;
+          if (!phonePattern.test(phone)) {
+              alert("Введите 10-значный номер телефона.");
+              return false;
+          }
+
+          return true;
+      }
+  </script>
+</head>
+<body>
+<form name="oldForm" onsubmit="return validateForm();">
+  <h2>Свяжитесь с нами</h2>
+  <label>
+    <input type="text" name="name" placeholder="Ваше имя">
+  </label>
+  <input type="text" name="email" placeholder="Email">
+  <input type="text" name="phone" placeholder="Телефон (10 цифр)">
+  <textarea name="message" placeholder="Ваше сообщение" rows="4"></textarea>
+  <button type="submit">Отправить</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Неоновая Анимация</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: radial-gradient(circle at center, #111, #000);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      position: relative;
+      width: 320px;
+      height: 420px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+      overflow: hidden;
+      color: white;
+      padding: 2rem;
+      z-index: 1;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        from 0deg,
+        #00ffff,
+        #ff00ff,
+        #00ffff,
+        #ff00ff,
+        #00ffff
+      );
+      animation: spin 6s linear infinite;
+      z-index: -2;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: inherit;
+      border-radius: inherit;
+      z-index: -1;
+      filter: blur(30px);
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+
+    .glow-btn {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      color: #00ffff;
+      border: 2px solid #00ffff;
+      border-radius: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    }
+
+    .glow-btn:hover {
+      background: #00ffff;
+      color: #000;
+      box-shadow: 0 0 30px #00ffff;
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  <h2>Привет, мир!</h2>
+  <p>Эта карточка демонстрирует CSS-анимацию, эффект "стекла" и светящееся оформление без JS.</p>
+  <button class="glow-btn">Нажми</button>
+</div>
+</body>
+</html>
