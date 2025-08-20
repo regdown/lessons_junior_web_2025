@@ -12,6 +12,10 @@ switch ($path) {
     //case '/products':
         require __DIR__ . '/api/products.php';
         break;
+    case '/api/categories':
+        //case '/products':
+        require __DIR__ . '/api/categories.php';
+        break;
 
     default:
         http_response_code(404);
