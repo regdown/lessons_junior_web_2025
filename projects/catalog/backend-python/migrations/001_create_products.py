@@ -2,7 +2,7 @@
 import sqlite3
 
 # подключаемся к файлу БД (если файла нет – создастся автоматически)
-conn = sqlite3.connect("../../product_catalog.db")
+conn = sqlite3.connect("../product_catalog.db")
 cursor = conn.cursor()
 
 # создаём таблицу categories
