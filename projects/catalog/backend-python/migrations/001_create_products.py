@@ -1,7 +1,7 @@
 # backend-python/migrations/001_create_products.py
 import sqlite3
 
-# подключаемся к файлу БД (если файла нет – создастся автоматически)
+# подключаемся к файлу БД (если файла нет – создастся автоматически) Здесь был Иван
 conn = sqlite3.connect("../product_catalog.db")
 cursor = conn.cursor()
 
