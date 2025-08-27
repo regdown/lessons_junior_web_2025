@@ -36,6 +36,7 @@ public function toArray(): array {
     return [
         'id' => $this->id,
         'name' => $this->name,
+        'surname' => $this->surname,
         'patronymic' => $this->patronymic,
         'age' => $this->age,
         'email' => $this->email,
