@@ -18,7 +18,7 @@ cursor.executescript("""
             patronymic TEXT NOT NULL,
             age INTEGER,
             email TEXT NOT NULL,
-            adress TEXT NULL
+            adress TEXT NOT NULL
         );
 """)
 
