@@ -11,7 +11,7 @@ use Http\JsonResponse;
 use Repository\ProductRepository;
 
 // путь к БД-файлу (лежит на уровень выше php/)
-$dbFile = __DIR__ . '/../../product_catalog.db';
+$dbFile = __DIR__ . '/../../database.db';
 
 // Создаём соединение
 $db = new Database($dbFile);

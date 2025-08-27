@@ -18,7 +18,10 @@ switch ($path) {
     case '/categories':
         require __DIR__ . '/api/categories.php';
         break;
-
+    case '/api/users':
+    case '/users':
+        require __DIR__ . '/api/users.php';
+        break;
     default:
         http_response_code(404);
         echo json_encode(['message' => 'Endpoint not found', 'path' => $path], JSON_UNESCAPED_UNICODE);

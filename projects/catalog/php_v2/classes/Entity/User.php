@@ -13,7 +13,7 @@ class User{
     public string $adress;
 
 
-public function __constract(
+public function __construct(
     int $id,
     string $name,
     string $surname,

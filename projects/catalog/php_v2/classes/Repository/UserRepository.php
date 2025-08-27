@@ -15,10 +15,17 @@ class UserRepository {
     }
 
     public function all(): array {
-        $stmt = $this->pdo->query('SELECT * FROM users ORDER BY name');
+        $stmt = $this->pdo->query('SELECT * FROM users');
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
         return array_map(
-            fn($r) => new User((int)$r['id'], (string)$r['name']),
+            fn($r) => new User(
+                (int)$r['id'],
+                (string)$r['name'],
+                (string)$r['surname'],
+                (string)$r['patronymic'],
+                (int)$r['age'],
+                (string)$r['email'],
+                (string)$r['adress'],),
             $rows
         );
     }
