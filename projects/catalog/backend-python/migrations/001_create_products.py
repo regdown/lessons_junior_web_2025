@@ -19,6 +19,7 @@ cursor.executescript("""
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
         description TEXT,
+        image_url TEXT,
         category_id INTEGER,
         brand_id INTEGER,
         price REAL,  
