@@ -15,7 +15,7 @@ cursor.executescript("""
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
             surname TEXT NOT NULL,
-            patronymic TEXT,
+            patronymic TEXT NOT NULL,
             age INTEGER,
             email TEXT,
             adress TEXT
