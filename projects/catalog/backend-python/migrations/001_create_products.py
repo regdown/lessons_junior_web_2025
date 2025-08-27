@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('../database.db')
+conn = sqlite3.connect('../../database.db')
 cursor = conn.cursor()
 
 
@@ -19,6 +19,7 @@ cursor.executescript("""
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
         description TEXT,
+        image_url TEXT,
         category_id INTEGER,
         brand_id INTEGER,
         price REAL,  
@@ -45,5 +46,8 @@ cursor.execute("INSERT INTO brands (name) VALUES ('RayBan')"),
 cursor.execute("""INSERT INTO products (name, description, price, stock, category_id, brand_id) VALUES ('Футболка хлопковая Оверсайз', 'Самая модная футболка гадом буду', 1499.00, 3,1,1)"""),
 cursor.execute("""INSERT INTO products (name, description, price, stock, category_id, brand_id) VALUES ('Футбольные бутсы','Магаа, это лучшие бутсы, гадом буду. Месси на кампноу в них играл',11990,6,2,2)"""),
 cursor.execute("""INSERT INTO products (name,description,price,stock,category_id,brand_id) VALUES ('Очки солнцезащитные','Просто. Красиво. Удобно.',21299,17,3,3)"""),
+
+conn.commit()
+conn.close()
 
 print("Миграция успешно завершена")
