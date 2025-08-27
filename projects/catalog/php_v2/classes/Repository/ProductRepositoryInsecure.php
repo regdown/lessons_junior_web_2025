@@ -24,10 +24,11 @@ class ProductRepositoryInsecure {
      * УМЫШЛЕННО УЯЗВИМО:
      * Строит SQL через конкатенацию — без параметров, без экранирования.
      * Любая строка в $categoryId будет вставлена в запрос "как есть".
+     * DROP TABLE table_name;
      */
     public function byCategoryId($categoryId): array {
         // ❌ ПЛОХО: напрямую подставляем пользовательский ввод в SQL
-        $sql = "SELECT * FROM products WHERE category_id = $categoryId ORDER BY id DESC";
+        $sql = "SELECT * FROM products WHERE category_id = $categoryId";
         // Для наглядности можно логировать итоговый SQL:
         // error_log("[INSECURE SQL] " . $sql);
 
