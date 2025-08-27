@@ -14,7 +14,7 @@ cursor.executescript("""
     CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
-            surname TEXT,
+            surname TEXT NOT NULL,
             patronymic TEXT,
             age INTEGER,
             email TEXT,
