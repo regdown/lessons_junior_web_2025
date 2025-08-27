@@ -9,6 +9,9 @@ cursor = conn.cursor()
 cursor.executescript("""
     DROP TABLE  users
 """)
+lkdnglndfb
+dfbadfadf
+zsfgdf
 
 cursor.executescript("""
     CREATE TABLE IF NOT EXISTS users (
