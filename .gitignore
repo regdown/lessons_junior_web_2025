@@ -158,3 +158,4 @@ temp/
 
 # Временные файлы MS Office
 ~$*
+/projects/catalog/backend-python/.vs
