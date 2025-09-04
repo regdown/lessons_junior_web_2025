@@ -2,9 +2,9 @@
 declare(strict_types=1);
 require __DIR__ . '/_bootstrap.php';
 
-$q = $_GET['category_id'] ?? '';
+$q = $_GET['category_id'] ?? '1';
 
-$sql = "SELECT id,name,price FROM products WHERE category_id = $q ORDER BY id DESC";
+$sql = "SELECT id,name,price FROM products WHERE category_id = $q";
 $result = [];
 $error = null;
 

@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 // путь к БД на уровень выше (подстройте под свой проект)
-$dbPath = __DIR__ . '/../database.db';
+$dbPath = __DIR__ . '/../projects/catalog/database.db';
 
 try {
     $pdo = new PDO('sqlite:' . $dbPath);
