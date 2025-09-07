@@ -1,0 +1,1 @@
+php setup_and_benchmark.php big.sqlite 3
