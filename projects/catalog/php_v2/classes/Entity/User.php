@@ -5,9 +5,8 @@ namespace Entity;
 
 class User{
     public int $id;
-    public string $name;
+    public string $username;
     public string $surname;
-    public ?string $patronymic;
     public int $age;
     public string $email;
     public string $adress;
@@ -15,18 +14,16 @@ class User{
 
 public function __construct(
     int $id,
-    string $name,
+    string $username,
     string $surname,
-    ?string $patronymic,
     int $age,
     string $email,
     string $adress
     
 ) {
     $this->id=$id;
-    $this->name=$name;
+    $this->username=$username;
     $this->surname=$surname;
-    $this->patronymic=$patronymic;
     $this->age=$age;
     $this->email=$email;
     $this->adress=$adress;
@@ -35,9 +32,8 @@ public function __construct(
 public function toArray(): array {
     return [
         'id' => $this->id,
-        'name' => $this->name,
+        'username' => $this->username,
         'surname' => $this->surname,
-        'patronymic' => $this->patronymic,
         'age' => $this->age,
         'email' => $this->email,
         'adress' => $this->adress
