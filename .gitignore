@@ -160,3 +160,6 @@ temp/
 ~$*
 /projects/catalog/backend-python/.vs
 *.rtf#
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
