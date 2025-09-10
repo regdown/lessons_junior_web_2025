@@ -2,7 +2,7 @@
 import sqlite3
 
 # подключаемся к файлу БД (если файла нет – создастся автоматически)
-conn = sqlite3.connect("../../database.db")
+conn = sqlite3.connect('../../database.db')
 cursor = conn.cursor()
 
 # наполняем categories

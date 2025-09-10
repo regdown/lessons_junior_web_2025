@@ -2,9 +2,8 @@
 import sqlite3
 from pathlib import Path
 
-DB_PATH = (Path(__file__).resolve().parent.parent / "database.db")
-
-conn = sqlite3.connect(str(DB_PATH))
+conn = sqlite3.connect('../../database.db')
+conn.execute('PRAGMA foreign_keys = ON;')
 conn.execute('PRAGMA foreign_keys = ON;')
 cur = conn.cursor()
 
