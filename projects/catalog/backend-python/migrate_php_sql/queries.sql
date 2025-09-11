@@ -85,3 +85,42 @@ JOIN
 WHERE
     i.user_id = 3;              
 
+
+
+Илья Исаев, [10 сент. 2025 г., 18:43:49]:
+select
+    u.id,
+    u.email,
+    u.name,
+    u.created_at,
+    count(o.id) total_orders,
+    sum(o.total_cents) total_cents,
+    avg(o.total_cents)
+from users u
+LEFT JOIN orders o on o.user_id = u.id
+GROUP BY
+    u.id,
+    u.email,
+    u.name,
+    u.created_at
+order by sum(o.total_cents) desc
+
+
+select
+    u.id,
+    u.email,
+    u.name,
+    u.created_at,
+    count(o.id) total_orders,
+    sum(o.total_cents) total_cents,
+    avg(o.total_cents)
+from users u
+INNER JOIN orders o on o.user_id = u.id
+WHERE u.id > 10000
+GROUP BY
+    u.id,
+    u.email,
+    u.name,
+    u.created_at
+HAVING count(o.id) >=12
+order by sum(o.total_cents) desc
