@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Entity;
 
-class Items {
+class OrderItems {
     public int $id;
     public int $user_id;
     public int $category_id;
