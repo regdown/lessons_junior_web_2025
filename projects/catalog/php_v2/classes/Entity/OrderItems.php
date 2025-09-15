@@ -5,29 +5,32 @@ namespace Entity;
 
 class OrderItems {
     public int $id;
-    public int $user_id;
-    public int $category_id;
-    public int $quantity;
+    public int $order_id;
+    public int $product_id;
+    public float $price;
+    public int $qty;
 
     public function __construct(
         int $id,
-        int $user_id,
-        int $category_id,
-        int $quantity
+        int $order_id,
+        int $product_id,
+        float $price,
+        int $qty
     ) {
         $this->id = $id;
-        $this->user_id = $user_id;
-        $this->category_id = $category_id;
-        $this->quantity = $quantity;
+        $this->order_id = $order_id;
+        $this->product_id = $product_id;
+        $this->price = $price;
+        $this->qty = $qty;
     }
 
-    /** Удобно отдавать массив для json_encode */
     public function toArray(): array {
         return [
             'id' => $this->id,
-            'user_id' => $this->user_id,
-            'category_id' => $this->category_id,
-            'quantity' => $this->quantity,
+            'order_id' => $this->order_id,
+            'product_id' => $this->product_id,
+            'price' => $this->price,
+            'qty' => $this->qty,
         ];
     }
 }
