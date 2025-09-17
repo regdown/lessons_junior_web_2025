@@ -14,6 +14,7 @@ class User {
     public ?string $phone;
     public bool $consent;     // 0/1 -> bool
     public string $created_at;
+    public string $password;
 
     public function __construct(
         int $id,
@@ -25,7 +26,8 @@ class User {
         ?string $gender,
         ?string $phone,
         bool $consent,
-        string $created_at
+        string $created_at,
+        string $password
     ) {
         $this->id = $id;
         $this->name = $name;
@@ -37,6 +39,7 @@ class User {
         $this->phone = $phone;
         $this->consent = $consent;
         $this->created_at = $created_at;
+        $this->password = $password;
     }
 
     public function toArray(): array {
@@ -51,6 +54,7 @@ class User {
             'phone' => $this->phone,
             'consent' => $this->consent,
             'created_at' => $this->created_at,
+            'password' => $this->password
         ];
     }
 }

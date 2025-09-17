@@ -8,7 +8,8 @@ $db->exec("CREATE TABLE IF NOT EXISTS users (
     surname VARCHAR(255),
     age INTEGER,
     email TEXT,
-    adress TEXT
+    adress TEXT,
+    password TEXT
 )");
 
 $db->exec("CREATE TABLE IF NOT EXISTS categories (
@@ -44,9 +45,9 @@ $db->exec("CREATE TABLE IF NOT EXISTS items(
 )");
 
 //Добавление пользователей
-$db->exec("INSERT INTO users (username,surname,age,email,adress) VALUES ('Поп','Питонов',29,'pop@mail.ru','Москва')");
-$db->exec("INSERT INTO users (username,surname,age,email,adress) VALUES ('Джон','Уотсон',32,'rocky@mail.ru','Новосибирск')");
-$db->exec("INSERT INTO users (username,surname,age,email,adress) VALUES ('Старшина','Адмиралтейский',66,'zvezda@mail.ru','Красная Площадь')");
+$db->exec("INSERT INTO users (username, surname, age, email, adress, password) VALUES ('Поп', 'Питонов', 29, 'pop@mail.ru', 'Москва', '" . md5('PASS1') . "')");
+$db->exec("INSERT INTO users (username,surname,age,email,adress,password) VALUES ('Джон','Уотсон',32,'rocky@mail.ru','Новосибирск', '" .md5('PASS2') . "')");
+$db->exec("INSERT INTO users (username,surname,age,email,adress,password) VALUES ('Старшина','Адмиралтейский',66,'zvezda@mail.ru','Красная Площадь', '" .md5('PASS3') . "')");
 
 
 // Добавление категорий

@@ -4,7 +4,8 @@
         surname VARCHAR(255),
         age INTEGER,
         email TEXT,
-        adress TEXT
+        adress TEXT,
+        password TEXT
  );
 
 CREATE TABLE categories(
@@ -41,9 +42,9 @@ CREATE TABLE items (
 
 
 --Добавление пользователей
-INSERT INTO users (username,surname,age,email,adress) VALUES ("Поп","Питонов",29,"pop@mail.ru","Москва");
-INSERT INTO users (username,surname,age,email,adress) VALUES ("Джон","Уотсон",32,"rocky@mail.ru","Новосибирск");
-INSERT INTO users (username,surname,age,email,adress) VALUES ("Старшина","Адмиралтейский",66,"zvezda@mail.ru","Красная Площадь");
+INSERT INTO users (username,surname,age,email,adress,password) VALUES ("Поп","Питонов",29,"pop@mail.ru","Москва",md5("PASS1"));
+INSERT INTO users (username,surname,age,email,adress) VALUES ("Джон","Уотсон",32,"rocky@mail.ru","Новосибирск",md5("PASS2"));
+INSERT INTO users (username,surname,age,email,adress) VALUES ("Старшина","Адмиралтейский",66,"zvezda@mail.ru",md5("Красная Площадь","PASS3"));
 
 --Добавление категорий
 INSERT INTO categories (name) VALUES ("Одежда");
