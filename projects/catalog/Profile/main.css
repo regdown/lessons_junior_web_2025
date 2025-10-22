@@ -9,6 +9,19 @@ body {
     min-height: 100%; 
 }
 
+.avatar-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover; 
+    border: 2px solid #007bff;
+}
+
 .profile-container {
     width: 600px;
     background-color: #fff; 
@@ -16,6 +29,21 @@ body {
     padding: 30px;
     border-radius: 10px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.upload-button {
+    background-color: #f3009e; 
+    color: white;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.upload-button:hover {
+    background-color: #007bff; 
 }
 
 h2 {
@@ -37,7 +65,8 @@ h2 {
 
 .profile-field input[type="text"],
 .profile-field input[type="email"],
-.profile-field input[type="password"] {
+.profile-field input[type="password"],
+.profile-field input[type="date"] {
     width: 100%;
     padding: 12px;
     border: 1px solid #ced4da; 
@@ -49,7 +78,8 @@ h2 {
 
 .profile-field input[type="text"]:focus,
 .profile-field input[type="email"]:focus,
-.profile-field input[type="password"]:focus {
+.profile-field input[type="password"]:focus
+.profile-field input[type="date"]:focus {
     border-color: #f158e7;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(221, 0, 255, 0.25); 

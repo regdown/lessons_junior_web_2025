@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профиль пользователя</title>
     <link rel="stylesheet" href="main.css">
+    <script src="index.js"></script>
+
 </head>
 <body>
     <body>
 
         <div class="profile-container">
             <h2>Профиль</h2>
-    
+
+            <div class="avatar-wrapper">
+                <div class="avatar-container" id="avatarContainer">
+                    <img src="https://via.placeholder.com/120" alt="Аватар" class="avatar" id="avatar">
+                    <input type="file" id="upload" style="display:none;" accept="image/*">
+                </div>
+            </div>
+
             <div class="profile-field">
                 <label for="firstName">Имя:</label>
                 <input type="text" id="firstName" name="firstName" value="Иван">
@@ -23,8 +32,8 @@
             </div>
     
             <div class="profile-field">
-                <label for="age">Возраст:</label>
-                <input type="text" id="age" name="age" value="30">
+                <label for="age">Дата рождения</label>
+                <input type="date" id="age" name="age" value="22.10.2025">
             </div>
     
             <div class="profile-field">
@@ -61,6 +70,6 @@
                 <button type="submit">Сохранить изменения</button>
             </div>
         </div>
-    
+     
     </body>
     </html>
