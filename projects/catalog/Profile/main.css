@@ -1,27 +1,27 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    background-color: #f8f9fa; /* Светло-серый фон */
-    color: #343a40; /* Темно-серый цвет текста */
+    background-color: #f8f9fa;
+    color: #343a40; 
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Занимает всю высоту экрана */
+    min-height: 100%; 
 }
 
 .profile-container {
     width: 600px;
-    background-color: #fff; /* Белый фон контейнера */
-    border: 1px solid #dee2e6; /* Более светлый цвет границы */
+    background-color: #fff; 
+    border: 1px solid #dee2e6; 
     padding: 30px;
-    border-radius: 10px; /* Скругленные углы */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Мягкая тень */
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
     text-align: center;
     margin-bottom: 25px;
-    color: #f3009e; /* Синий заголовок */
+    color: #f3009e; 
 }
 
 .profile-field {
@@ -30,9 +30,9 @@ h2 {
 
 .profile-field label {
     display: block;
-    font-weight: 500; /* Полужирный шрифт */
+    font-weight: 500; 
     margin-bottom: 8px;
-    color: #495057; /* Темно-серый цвет label */
+    color: #495057;
 }
 
 .profile-field input[type="text"],
@@ -40,37 +40,37 @@ h2 {
 .profile-field input[type="password"] {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ced4da; /* Светлый цвет границы */
-    border-radius: 6px; /* Скругленные углы */
+    border: 1px solid #ced4da; 
+    border-radius: 6px; 
     box-sizing: border-box;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Плавные переходы */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; 
     font-size: 16px;
 }
 
 .profile-field input[type="text"]:focus,
 .profile-field input[type="email"]:focus,
 .profile-field input[type="password"]:focus {
-    border-color: #f158e7; /* Цвет границы при фокусе */
+    border-color: #f158e7;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(221, 0, 255, 0.25); /* Тень при фокусе */
+    box-shadow: 0 0 0 0.2rem rgba(221, 0, 255, 0.25); 
 }
 
 .profile-field button {
-    background-color: #f3009e; /* Синий цвет кнопки */
+    background-color: #f3009e; 
     color: white;
     padding: 12px 25px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.2s ease-in-out; /* Плавный переход цвета */
+    transition: background-color 0.2s ease-in-out; 
 }
 
 .profile-field button:hover {
-    background-color: #f3009e; /* Затемненный синий цвет при наведении */
+    background-color: #f3009e; 
 }
 
 .profile-field button:focus {
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); /* Тень при фокусе */
+    box-shadow: 0 0 0 0.2rem rgba(229, 40, 135, 0.5); 
 }
