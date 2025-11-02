@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 
 export function CounterTitle() {
     const [count, setCount] = useState(0);
@@ -9,7 +9,7 @@ export function CounterTitle() {
 
     return (
         <div>
-            <p>Счетчик: {count}</p>
+            <p>Счетчик: {count} - счетчик 2</p>
             <button onClick={() => setCount(count + 1)}>Увеличить</button>
         </div>
     );

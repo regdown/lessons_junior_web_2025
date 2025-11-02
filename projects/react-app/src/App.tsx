@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Demo } from './components/Demo';
 import { HelloMessage } from './components/HelloMessage';
-import { Greeting } from './components/GreetingProps';
+import { Greeting } from './components/Greeting';
 import { Counter } from './components/Counter';
 import { CounterTitle } from './components/CounterTitle';
 import { Button } from './components/Button';
@@ -10,6 +10,7 @@ import { LoginButton } from './components/LoginButton';
 import { FruitsList } from './components/FruitsList';
 import { UserInfo } from './components/UserInfo';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { Header } from './components/Header';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div>
+      <Header />
       <BrowserRouter>
         {/* Навигационное меню */}
         <nav style={{ marginBottom: '1em' }}>
@@ -28,7 +30,7 @@ function App() {
         </nav>
         {/* Определение маршрутов */}
         <Routes>
-          <Route path="/" element={<Greeting name="Дома" />} />
+          <Route path="/" element={<Greeting name="Дома" id="Test" />} />
           <Route path="/about" element={<Greeting name="О программе" />} />
         </Routes>
       </BrowserRouter>
@@ -40,9 +42,10 @@ function App() {
       <Counter />
       <CounterTitle />
       <Button text='123' />
-      <LoginButton onLogin={login} />
-      <FruitsList />
+      <br />
+      <LoginButton onLogin={login} />      
       <UserInfo isLoggedIn={userLogged} />
+      <FruitsList />
     </div>
   );
 }
