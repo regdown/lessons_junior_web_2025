@@ -1,5 +1,4 @@
 import { FC } from 'react';
-
-interface ButtonProps { text: string; }
+import { ButtonProps } from '../interfaces/ButtonProps';
 
 export const Button: FC<ButtonProps> = ({ text }) => <button>{text}</button>;

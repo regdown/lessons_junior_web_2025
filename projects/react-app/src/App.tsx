@@ -11,6 +11,8 @@ import { FruitsList } from './components/FruitsList';
 import { UserInfo } from './components/UserInfo';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Header } from './components/Header';
+import { ButtonColored } from './components/ButtonColored';
+import { ButtonHint } from './components/ButtonHint';
 
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
       <Counter />
       <CounterTitle />
       <Button text='123' />
+      <ButtonColored text='123' color='red'/>
+      <ButtonHint text='123456' color='red' isHint={true}/>
       <br />
       <LoginButton onLogin={login} />      
       <UserInfo isLoggedIn={userLogged} />
