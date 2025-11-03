@@ -13,7 +13,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Header } from './components/Header';
 import { ButtonColored } from './components/ButtonColored';
 import { ButtonHint } from './components/ButtonHint';
-
+import { UserAge } from './components/UserAge';
 
 function App() {
   const [userLogged, setUserLogged] = useState(false);
@@ -50,6 +50,8 @@ function App() {
       <LoginButton onLogin={login} />      
       <UserInfo isLoggedIn={userLogged} />
       <FruitsList />
+      <br/>
+      <UserAge age={19} />
     </div>
   );
 }

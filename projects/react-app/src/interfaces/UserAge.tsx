@@ -1,0 +1,1 @@
+export interface AgeProps {age: number};

@@ -1,7 +1,4 @@
-interface GreetingProps {
-    name: string; // описываем проп "name" типа string
-    id?: string;
-}
+import {GreetingProps} from '../interfaces/GreetingProps'
 
 export function Greeting({ name, id }: GreetingProps) {
     return <p>Привет, {name} id = {id}!</p>;
