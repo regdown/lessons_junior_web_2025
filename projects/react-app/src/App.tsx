@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import './App.css';
 import { Demo } from './components/Demo';
 import { HelloMessage } from './components/HelloMessage';
@@ -14,6 +14,41 @@ import { Header } from './components/Header';
 import { ButtonColored } from './components/ButtonColored';
 import { ButtonHint } from './components/ButtonHint';
 import { UserAge } from './components/UserAge';
+import { CounterReducer } from './components/CounterReducer';
+import { DemoComponent } from './components/DemoComponent';
+import { Menu } from './components/Menu';
+
+type Theme = 'light' | 'dark';
+interface ThemeContextType {
+  theme: Theme;
+  toggleTheme: () => void;
+}
+
+const ThemeContext = createContext<ThemeContextType | null>(null);
+
+const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
+  children }) => {
+  const [theme, setTheme] = useState<Theme>('light');
+  const toggleTheme = () => setTheme(prev => (prev === 'light' ? 'dark' :
+    'light'));
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    {children}
+    </ThemeContext.Provider>
+  );
+};
+
+const ThemeSwitcher: React.FC = () => {
+const context = useContext(ThemeContext);
+  if (!context) return null; // если провайдер не обернул компонент
+  return (
+    <div>
+    <p>Текущая тема: {context.theme}</p>
+    <button onClick={context.toggleTheme}>Сменить тему</button>
+    </div>
+  );
+};
+
 
 function App() {
   const [userLogged, setUserLogged] = useState(false);
@@ -23,36 +58,43 @@ function App() {
   };
 
   return (
-    <div>
-      <Header />
-      <BrowserRouter>
-        {/* Навигационное меню */}
-        <nav style={{ marginBottom: '1em' }}>
-          <Link to="/">Home</Link> | <Link to="/about">About</Link>
-        </nav>
-        {/* Определение маршрутов */}
-        <Routes>
-          <Route path="/" element={<Greeting name="Дома" id="Test" />} />
-          <Route path="/about" element={<Greeting name="О программе" />} />
-        </Routes>
-      </BrowserRouter>
-      {/* Используем наш компонент внутри JSX */}
-      <Demo />
-      <HelloMessage />
-      <Greeting name="Алиса" />
-      <Greeting name="Боб" />
-      <Counter />
-      <CounterTitle />
-      <Button text='123' />
-      <ButtonColored text='123' color='red'/>
-      <ButtonHint text='123456' color='red' isHint={true}/>
-      <br />
-      <LoginButton onLogin={login} />      
-      <UserInfo isLoggedIn={userLogged} />
-      <FruitsList />
-      <br/>
-      <UserAge age={19} />
-    </div>
+    <ThemeProvider>
+      <ThemeSwitcher />
+      <DemoComponent />
+
+      <Menu />
+      <div>
+        <Header />
+        <BrowserRouter>
+          {/* Навигационное меню */}
+          <nav style={{ marginBottom: '1em' }}>
+            <Link to="/">Home</Link> | <Link to="/about">About</Link>
+          </nav>
+          {/* Определение маршрутов */}
+          <Routes>
+            <Route path="/" element={<Greeting name="Дома" id="Test" />} />
+            <Route path="/about" element={<Greeting name="О программе" />} />
+          </Routes>
+        </BrowserRouter>
+        {/* Используем наш компонент внутри JSX */}
+        <Demo />
+        <HelloMessage />
+        <Greeting name="Алиса" />
+        <Greeting name="Боб" />
+        <Counter />
+        <CounterReducer />
+        <CounterTitle />
+        <Button text='123' />
+        <ButtonColored text='123' color='red'/>
+        <ButtonHint text='123456' color='red' isHint={true}/>
+        <br />
+        <LoginButton onLogin={login} />      
+        <UserInfo isLoggedIn={userLogged} />
+        <FruitsList />
+        <br/>
+        <UserAge age={19} />
+      </div>
+    </ThemeProvider>
   );
 }
 
