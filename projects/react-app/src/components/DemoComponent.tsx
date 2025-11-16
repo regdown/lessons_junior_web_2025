@@ -5,8 +5,9 @@ function heavyCompute(num: number): number {
     console.log('Computing...');
     // (здесь могла бы быть сложная логика, напр. вычисление за O(n^2))
     let result = 0;
-    for (let i = 0; i < 10000000; i++) { result += Math.sin(num) *
-    Math.cos(i); }
+    for (let i = 0; i < 10000000; i++) { 
+        result += Math.sin(num) * Math.cos(i); 
+    }
     return result;
 }
 

@@ -33,20 +33,20 @@ const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     'light'));
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-    {children}
+      {children}
     </ThemeContext.Provider>
   );
 };
 
 const ThemeSwitcher: React.FC = () => {
-const context = useContext(ThemeContext);
-  if (!context) return null; // если провайдер не обернул компонент
-  return (
-    <div>
-    <p>Текущая тема: {context.theme}</p>
-    <button onClick={context.toggleTheme}>Сменить тему</button>
-    </div>
-  );
+  const context = useContext(ThemeContext);
+    if (!context) return null; // если провайдер не обернул компонент
+    return (
+      <div>
+        <p>Текущая тема: {context.theme}</p>
+        <button onClick={context.toggleTheme}>Сменить тему</button>
+      </div>
+    );
 };
 
 
@@ -61,7 +61,6 @@ function App() {
     <ThemeProvider>
       <ThemeSwitcher />
       <DemoComponent />
-
       <Menu />
       <div>
         <Header />

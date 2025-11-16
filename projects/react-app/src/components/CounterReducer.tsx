@@ -1,15 +1,15 @@
 import { useReducer } from 'react';
 
-type CounterAction = { type: 'increment' } | { type: 'decrement' }
+type CounterAction = { type: 'increment'} | { type: 'decrement' }
 
 const counterReducer = (state: number, action: CounterAction): number => {
     switch (action.type) {
         case 'increment':
-        return state + 1;
+            return state + 1;
         case 'decrement':
-        return state - 1;
+            return state - 1;
         default:
-        return state; // на случай неизвестного действия возвращаем текущее
+            return state; // на случай неизвестного действия возвращаем текущее
     }
 };
 
