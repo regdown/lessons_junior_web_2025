@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 
 type CounterAction = { type: 'increment'} | { type: 'decrement' }
 
@@ -14,8 +14,7 @@ const counterReducer = (state: number, action: CounterAction): number => {
 };
 
 export function CounterReducer() {
-    const [count, dispatch] = useReducer(counterReducer, 0);
-    return (
+    const [count, dispatch] = useReducer(counterReducer, 0); (
         <div>
             <p>Значение: {count}</p>
             {/* 4. Вызываем dispatch с объектом действия при клике */}
