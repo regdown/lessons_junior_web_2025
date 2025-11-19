@@ -25,3 +25,4 @@ export const Menu: React.FC = () => {
         </div>
     );
 };
+

@@ -9,7 +9,7 @@ import { Button } from './components/Button';
 import { LoginButton } from './components/LoginButton';
 import { FruitsList } from './components/FruitsList';
 import { UserInfo } from './components/UserInfo';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router';
 import { Header } from './components/Header';
 import { ButtonColored } from './components/ButtonColored';
 import { ButtonHint } from './components/ButtonHint';
