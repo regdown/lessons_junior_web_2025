@@ -13,16 +13,16 @@ export default function PostsPage() {
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
   async function loadPosts() {
-  setLoading(true);
-  try {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
-    const data: Post[] = await res.json();
-    setPosts(data);
-  } catch (error) {
-    console.error('Ошибка при загрузке постов:', error);
-  } finally {
-    setLoading(false);
-  }
+    setLoading(true);
+    try {
+      const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
+      const data: Post[] = await res.json();
+      setPosts(data);
+    } catch (error) {
+      console.error('Ошибка при загрузке постов:', error);
+    } finally {
+      setLoading(false);
+    }
   }
   loadPosts();
   }, []);
@@ -33,9 +33,9 @@ export default function PostsPage() {
     {posts && (
       <ul>
         {posts.map(post => (
-        <li key={post.id}>
-          <strong>{post.title}</strong>
-        </li>
+          <li key={post.id}>
+            <strong>{post.title}</strong>
+          </li>
         ))}
       </ul>
     )}

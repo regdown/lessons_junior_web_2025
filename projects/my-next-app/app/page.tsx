@@ -67,6 +67,9 @@ export default function Home() {
         <div>
           <SubscribeForm />
         </div>
+        <div>
+          <CounterControls/>
+        </div>
       </main>      
     </div>
   );

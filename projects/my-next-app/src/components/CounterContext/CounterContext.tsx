@@ -15,7 +15,7 @@ export const CounterProvider: React.FC<{ children: React.ReactNode }> = ({childr
     const value: CounterContextValue = { count, increment };
     return (
         <CounterContext.Provider value={value}>
-        {children}
+            {children}
         </CounterContext.Provider>
     );
 };
