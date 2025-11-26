@@ -14,23 +14,23 @@ export default function SubscribeForm() {
         }
     };
     return (
-    <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
-        {!submitted ? (
-            <>
-                <label>
-                    Введите email:
-                    <input
-                    type="email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                    required
-                    />
-                </label>
-                <button type="submit">Подписаться</button>
-            </>
-        ) : (
-            <p>Спасибо! Вы подписаны: {email}</p>
-        )}
-    </form>
-);
+        <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
+            {!submitted ? (
+                <>
+                    <label>
+                        Введите email:
+                        <input
+                        type="email"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        required
+                        />
+                    </label>
+                    <button type="submit">Подписаться</button>
+                </>
+            ) : (
+                <p>Спасибо! Вы подписаны: {email}</p>
+            )}
+        </form>
+    );
 }
